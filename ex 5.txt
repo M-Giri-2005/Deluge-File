@@ -1,0 +1,129 @@
+// 1. Write a deluge script to retrieve an element (at a specified index) from a given list. 
+number_list={25,30,12,15,96};
+info number_list.get(00);
+************************************************************************************************************
+ // 2. Write a deluge script to insert an element into the list at first position. 
+name_list={"red,blue,yellow,green"};
+name_list2={"orange"," "};
+var=name_list2.concat(name_list);
+info var;
+******************************************************************************************************************************
+// 3. Write a deluge script to find the product of the list of numbers. 
+// list= {6,8,9,34,7} 
+number_list={6,8,9,34,7};
+for each a in number_list
+{
+	var=a*5;
+	info var;
+	
+}
+********************************************************************************************************************************
+// 4) For a given number Print its Multiplication table by using list (Number=6)  
+number_list={6,8,9,34,7};
+for each a in number_list
+{
+	var=a*6;
+	info var;
+	
+}
+********************************************************************************************************************************************************
+
+
+// 5. write a deluge script to print the list of numbers in words. 
+// Numbers= {3, 6, 9, 10} 
+
+numbers_list= {3, 6, 9, 10};
+for each a in numbers_list
+{
+	words=a.toWords("en-gb");
+	info words;
+}
+
+*******************************************************************************************************************************************************************
+
+// 6. write a deluge script to print the sum of all odd numbers in the given list. 
+// numbers= {1,8,9,45,78,34} 
+numbers_list={1,8,9,45,78,34};
+add= 0;
+for each a in numbers_list
+{
+	if(a.isOdd())
+	{
+		info a;
+		add+=a;
+	
+		
+	}
+}
+info "sum of the all odd number  = " + add;
+*********************************************************************************************************************************************************************************
+// 7.write a deluge script to count the all odd numbers from the given list. 
+// Numbers_List= {4,90,88,77,11,13,1234} 
+Numbers_List= {4,90,88,77,11,13,1234} ;
+count =0;
+for each a in Numbers_List
+{
+	if(a % 2!= 0 )
+	{ 
+		info a;
+		count+=	1;
+	
+	}
+}
+info "total count of the given odd number is = " + count;
+
+*********************************************************************************************************************************************************************************
+// 8.write a deluge script to print the words (always, like, be) for each sentences in the 
+// given list.Sentences= {"Positive thinking always leads to success", "I like Nature", "Be positive"} 
+names_list={"Positive thinking always leads to success", "I like Nature", "Be positive"};
+name_list2={"always", "like", "be"};
+name=0;
+for each a in names_list
+{
+	if(a. containsIgnoreCase(name_list2.get(name)))
+	{
+		info name_list2.get(name);
+		name+=1;	
+	}
+}
+***********************************************************************************************************************************************************
+// 9.write a deluge script to print the index value for each elements in the given list. 
+// Fruits= {"Strawberry", "Cherry", "Apple", "Banana"} 
+fruits = {"Strawberry", "Cherry", "Apple", "Banana"};
+for each a in fruits
+{
+	var=fruits.indexOf(a);
+	b="intex value of the "+a + "is = " +var;
+	info b;
+	
+}
+**************************************************************************************************************************************************************************
+
+// 10. write a deluge script to find the square root of each number in the list and Print the 
+// value into the list. 
+// numbers= {44,89,99,100,12}
+
+numbers_list = {44,89,99,100,12};
+for each a in numbers_list
+{
+	var=a.sqrt();
+	info "sqrt of the given number is " +  a  +  " :  " + var;
+}
+
+
+
+// another method  write a deluge script to find the square root of each number in the list and Print the 
+// value into the list. 
+// numbers= {44,89,99,100,12}
+
+numbers_list = {44,89,99,100,12};
+new_list={};
+for each a in numbers_list
+{
+	var=a.sqrt();
+	new_list.add(var);
+	
+
+}
+info new_list;
+********************************************************************************************************	

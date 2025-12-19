@@ -1,0 +1,105 @@
+//1) Write a Deluge Script to check whether a number is negative, positive, or zero. 
+a=0;
+if(a>0)
+{
+	info("is a positive number");
+}else if (a<0) 
+{
+	info ("is a negative number");
+}
+else if (a==0)
+{
+	info ("is a zero ");
+}
+
+2)//2. Write a Deluge Script to check whether a number is divisible by 5 or 11 or not.
+a=50;
+if(a%5==0)
+{
+	info("is div by 5 " );
+}else if ( a %11==0) 
+{
+	info("is div by 11 ");
+}
+else{
+	info ("is not div by 11 & 5");
+}
+
+// 3 . Write a Deluge Script to check whether a number is even or odd.
+num=10;
+if(num % 2==0)
+{
+	info("is a even number");
+}
+else
+{
+	info("is a odd number");
+}
+
+
+//4. Write a Deluge Script to check whether a year is a leap year or not. #need correction
+year = 2023;
+if(year % 4==0){
+	info ("is a leap year");
+}
+else if(year % 1==0)
+{
+	info("is not a leap year");
+}
+
+
+// 5 . Write a Deluge Script to check whether a character is an alphabet or not. 
+find= "1";
+if(find.matches("[a-zA-z]")){
+	info "if a  alphabet ";
+}
+else 
+{
+	info "if not a alphabet";
+}
+
+***************************************************************************************************************************
+
+// 6) Write a Deluge Script to input any alphabet and check whether it is vowel or consonant.
+name="b";
+if(name.matches("[a]") || name.matches("[e]") || name.matches("[i]") || name.matches("[o]") || name.matches("[u]") )
+{
+	info "is a vowel ";
+}
+else 
+{
+	info "is a consonant";
+}
+
+******************************************************************************************************************************************
+// 7)Write a Deluge Script to input any character and check whether it is an alphabet, digit, or special character. 
+name="A";
+if(name.matches("[a-zA-Z]"))
+{
+	info "is a alphabet";
+}
+else if(name.matches("[0-9]"))
+{
+	info "is a digit";
+}
+else 
+{
+	info "is a special character";
+}
+******************************************************************************************************************************
+//8) Initialize a variable with a date value and print it.
+date='05-08-2025';
+curent = date.getDate();
+info curent ;
+***********************************************************************************************************************
+// 9) Initialize a variable with a date & time value and print it. 
+date_time='31.01.2024 18:30:53';
+curent_date=date_time.getDateTime();
+info curent_date;
+*********************************************************************************************************
+// 10) Compute the square of a given number and print it)  
+a=2;
+square = a.power(2);
+info square;
+****************************************************************************************************************************
+

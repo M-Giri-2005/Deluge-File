@@ -1,0 +1,228 @@
+
+ NAME=KARTHIKEYAN R
+REG NO = RET-475
+*******************************************************************************************************************************************************************
+// 1. Sort the given string list based on the number 
+// Input as follows {"Siva-01","Vijay-04","Regi-06","Gracy-09","Kowshal-07","Krish-05","Kiki
+// 10","John-03","Joe-02","John-08"};
+input_list={"Siva-01","Vijay-04","Regi-06","Gracy-09","Kowshal-07","Krish-05","Kiki-10","John-03","Joe-02","John-08"};
+maps=map();
+for each g in input_list
+{
+	var=g.getSuffix("-");
+	var1=var.toNumber();
+	maps.put(g,var1);
+	
+}
+new=maps.sort().keys();
+info new;
+*****
+inputs={"Siva-01","Vijay-04","Regi-06","Gracy-09","Kowshal-07","Krish-05","Kiki-10","John-03","Joe-02","John-08"};
+maps=map();
+for each g in inputs.keys()
+{
+	maps.put(g,g.getSuffix("-").toNumber());
+
+}
+info maps.sort().keys();
+
+
+***************************************************************************************************************************************************
+
+// 4. You are working at a bank, and the approval of a car loan depends on the applicant’s 
+// income and credit score:
+//  If the income is above 50,000 and the credit score is above 700, approve the loan.
+//  If the income is between 30,000 and 50,000 and the credit score is between 600 and 
+// 700, approve the loan with conditions.
+//  If the income is below 30,000 or the credit score is below 600, reject the loan. 
+// Input:
+//  Income = 55,000,
+//  Credit Score = 720
+//  Output:
+//  Loan Approval: Approved
+//  Input:
+//  Income = 25,000,
+//  Credit Score = 580 Output:
+//  Loan Approval: Rejected 
+
+
+ Income= 29000;
+Credit_Score=200;
+if (Income<30000 && Credit_Score<600 ) 
+    {
+		info  "Loan Approval status : Rejecter";
+	info "your income is = " + Income;
+	info "your are Credit Score is = " +Credit_Score;
+	}
+	
+else if(Income<= 50000 && Credit_Score<700 )
+{
+	info  "Loan Approval status : Approved";
+	info "your income is = " + Income;
+	info "your are Credit Score is = " + Credit_Score;
+	}
+	else if (Income> 30000 && Credit_Score>600 ) 
+    {
+		info  "Loan Approval status : Rejecter";
+	info "your income is = " + Income;
+	info "your are Credit Score is = " +Credit_Score;
+		
+    }
+	
+	else
+	{
+		info  "Loan Approval status :  approve the loan with conditions.";
+	info "your income is = " + Income;
+	info "your are Credit Score is = " + Credit_Score;
+	}
+********************************************************************************************************************************************************
+
+// 3. You’re helping a friend check if they can apply for a driving license. To qualify, the 
+// following must be true:
+//  They must be at least 18 years old.
+//  They must not have a criminal record.
+//  They must pass a vision test with a score of 6 or above.
+//  They must have completed at least 20 hours of driving practice.
+//  However, if they are 21 or older, they do not need to meet the vision test requirement. 
+// Similarly, if they have completed more than 50 hours of driving practice, they are 
+// considered eligible regardless of the other conditions (except for age).
+//  Input:
+//  Age = 22
+//  Criminal Record = Yes
+//  Vision Test Score = 4
+//  Driving Practice Hours = 55
+//  Output:
+//  You are eligible for a driving license.
+
+
+
+age= 21;
+Criminal_Record=0;
+Vision_Test_Score =6;
+Driving_Practice_Hours=25;
+if(age>= 18 && Driving_Practice_Hours>50)
+{
+	info " You are eligible for a driving license";
+}
+else if ( age == 21 || age >= 50 ) 
+{
+	info " You are eligible for a driving license";
+	info "do not need to meet the vision test requirement";
+}
+else if (age<= 18 && Driving_Practice_Hours >= 20 && Vision_Test_Score >= 6 && Criminal_Record == 0)
+{
+	info " You are eligible for a driving license";
+	
+}
+else
+{
+	info "You are not eligible for a driving license";
+}
+
+*****************************************************************************************************************************************************
+
+// 2. Sort the following list of elements : without using the sort function.
+//  Sort the first five elements as an ascending order and the second five elements as a 
+// descending order.
+//  Input = { 92,15,99,34,34,0,70,52,69,53} 
+// Output = {15,34,34,92,99,70,69,53,52,0} 
+
+input_list = { 92,15,99,34,34,0,70,52,69,53};
+var=input_list.size();
+sort_one=input_list.subList(0,5).sort(true);
+sort_two=input_list.subList(5,var).sort(false);
+sort_one.addAll(sort_two);
+info sort_one;
+
+*************
+another method sum
+// 2. Sort the following list of elements : without using the sort function.
+//  Sort the first five elements as an ascending order and the second five elements as a 
+// descending order.
+//  Input = { 92,15,99,34,34,0,70,52,69,53} 
+// Output = {15,34,34,92,99,70,69,53,52,0} 
+
+input_list={92,15,99,34,34,0,70,52,69,53};
+list1=list();
+list2=list();
+list3=list();
+for each i in input_list
+{
+if ( input_list.indexOf(i)<5) 
+{
+	list1.add(i);
+// 	info list1;
+}
+else
+{
+	list2.add(i);
+// 	info list2;
+}
+
+}
+
+for each g in list1
+{
+     var=list1.smallest();
+	list3.add(var);
+	list1.removeElement(var);
+	}
+for each f in list2
+{
+	var1=list2.largest();
+	list3.add(var1);
+	list2.removeElement(var1);
+}
+info list3;
+
+*********************************************************************************************************************************
+
+// 5.Order Processing System: You are building an order processing system in Deluge, and 
+// you need to store customer information, including their name, email customer ID, and 
+// order details. 
+// Design a Map data structure to store this information, and write a Deluge script to add a 
+// new customer, update an existing customer's order, and retrieve a customer's order 
+// details. 
+// i) If the customer's total purchased amount is between Rs.1000 to Rs.5000 will get 2% 
+// discount 
+// ii)And If the customer's total purchased amount is between Rs.5000 and Rs.10000, they 
+// will get 5% discount. 
+// iii) If a customer visits from 1st August 2025 (10.00 AM) to 31st August 2025 (10.00 
+// PM) and their purchased amount is above Rs.2000 then, the discount amount Rs. 500. 
+// (Note : This criteria will be applicable only to those who have purchased on the 
+// mentioned time line)
+
+customer_list= {
+	01:{"customer ID":201,"name": "karthi","email": "karthikishore111@gmail.com","order details": "inventer","price":20000,"date&time": '1st Aug 2025  10:30:54'},
+	02:{"customer ID":202,"name": "magesh","email": "magesh001@gmail.com","order details": "light","RO filter":50000,"date&time": '15st May 2025  13:30:54'},
+	03:{"customer ID":203,"name": "giri","email": "giri002@gmail.com","order details": "tubelight","AC":60000,"date&time": '25st Aug 2025  18:00:00'}
+	};
+	new_customer={04:{"customer ID":204,"name": "rk","email": "rk111@gmail.com","order details": "inventer","price":20000,"date&time": '1st Aug 2025  10:30:54'}};
+	
+	customer_list.putAll(new_customer);
+// 	info customer_list ;
+	for each new in customer_list
+    {
+		if (new.get("order details")=="light")
+        {
+           new.update("order details","water heater");
+		}
+    }
+info customer_list ;
+	   if ( price>5000 && price <= 10000 ) 
+      {
+		 var=price/100*15;
+		 info var;
+      }
+	  else if ( price>1000 && price < 5000 ) 
+      {
+		 var=price/100*2;
+      }
+	else 
+    {
+		var=price-500;
+		info var;
+    }
+	 
+    }
+*******************************************************************************************************************************************

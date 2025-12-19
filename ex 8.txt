@@ -1,0 +1,324 @@
+// 1. Write a Deluge program for the candidate who is eligible to vote using Map. 
+// (Minimum - 10 Members) 
+// Examples: 
+// 1. Kumar - 29-  Sep-2003 
+// 2. Naveen - 10-Aug-2005 
+// 3. Vignesh - 25-Jan-2002 
+// 4. Mani  - 16-May-2001 
+// 5. Balu- 11-Dec-2007
+
+name_list= {
+1:{"name" : "kumar","dob": '29-Sep-2003'},
+2:{"name" : "Naveen","dob": '10-Aug-2005'},
+3:{"name" : "Vignesh","dob": '25-Jan-2002'},
+4:{"name" : "Mani","dob": '25-Jan-2002'},
+5:{"name" : "Balu","dob": '11-Dec-2007'},
+6:{"name" : "karthi","dob": '09-Dec-2003'},
+7:{"name" : "magesh","dob": '16-aug-2004'},
+8:{"name" : "giri","dob": '05-may-2005'},
+9:{"name" : "pram","dob": '25-Jan-2000'},
+10:{"name" : "sathiya","dob":'25-Jan-2001'}
+};
+for each g in name_list
+{
+	current_date=zoho.currentdate;
+	ver1=current_date.getYear();
+	ver2=g.get("dob");
+	
+ver3=ver2.getYear();
+age=ver1-ver3;
+if(age>=18)
+{
+	info g;
+	info  "  your eligible for voting & your age = " +age;
+	info "*******************************************************************";
+}
+else 
+{
+	info g;
+	info  "   your not eligible for voting & your age = " + age;
+	info "****************************************************************";
+}
+}
+
+*********************************************************************************************************************************
+
+// 2. Write a Deluge Program to find the Seniority order in a family using a Map with their 
+// ages. (Minimum - 8 Members) 
+// Examples: 
+// 1. Kumaresan - 11-Dec-1963 
+// 2. Nagesh- 10-Aug-1990 
+// 3. Vinoth- 25-Jan-1963 
+// 4. Manimaran - 16-May-2007 
+// 5. Balu - 11-Dec-2002 
+
+name_list= {
+1:{"name" : "kumar","dob": '11-Dec-1963'},
+2:{"name" : "Naveen","dob": '10-Aug-1990'},
+3:{"name" : "Vignesh","dob": '25-Jan-1963'},
+4:{"name" : "Mani","dob": '25-Jan-2002'},
+5:{"name" : "Balu","dob": '11-Dec-2007'},
+6:{"name" : "karthi","dob": '09-Dec-2003'},
+7:{"name" : "magesh","dob": '16-aug-2004'},
+8:{"name" : "giri","dob": '05-may-2005'}
+};
+maps=map();
+for each g in name_list
+{
+		current_date=zoho.currentdate;
+	ver1=current_date.getYear();
+	ver2=g.get("dob");
+	ver3=ver2.getYear();
+      age=ver1-ver3;
+	  ver4=g.get("name");
+	  maps.put(age,ver4);
+	  maps.sortkey(false);
+
+	}
+info maps;
+**********************************************************************************************************************
+
+// 3. Write a Deluge Program to calculate Employee's Net Salary and Overall Tax paid by 
+// Employee using Map (Minimum - 5 Members) 
+// Examples: 
+// 1. Name - Kumaresan 
+// 2. Basic - 8000 
+// 3. HRA - 15% 
+// 4. DA  - 10% 
+// 5. Tax - 5% 
+
+
+employee = {
+	1:{"Name":"Kumaresan","Basic": 8000,"HRA":15,"DA":10,"Tax":5}, 
+	2:{"Name":"magesh","Basic":10000,"HRA":20,"DA":15,"Tax":7}, 
+	3:{"Name":"giri","Basic":25000,"HRA":25,"DA":20,"Tax":10}, 
+	4:{"Name":"karthi","Basic":35000,"HRA":30,"DA":25,"Tax":15}, 
+	5:{"Name":"naveen","Basic":85000,"HRA":45,"DA":30,"Tax":40} 
+};
+for each g in employee
+{
+	basic = g.get("Basic");
+	hra= g.get("HRA");
+	da=g.get("DA");
+	tax= g.get("Tax");
+	var= basic/100*hra;
+	var2=basic/100*da;
+	var3=basic+var+var2;
+	var4=var3/100*tax;
+	var5=var3-var4;
+	var6=g.get("Name");
+	info "Employee Name :     " + var6 + "        : salary after the tax reduction =   " + var5;
+	info "************************************************************";
+	
+	}
+	
+**********************************************************************************************************************************
+
+// 4. Write a script to allow the student for the given games based on their given age using 
+// Map Input: 
+// student_sports_Id={001,002,003,004,005} 
+// student_Name={“abc”,”pqr”,”xyz”,”ijk”,”lmn”} 
+// Age={10,12,20,18,15} 
+//    Note: Age between fifteen and eighteen can play 400m Relay 
+// Age below fifteen can play 100m Running 
+// // Age above eighteen can play Kabbadi
+
+student_details={
+	1:{"student sp id ":001,"student name":"abc","age":10},
+	2:{"student sp id ":002,"student name":"pqr","age":12},
+	3:{"student sp id ":003,"student name":"xyz","age":20},
+	4:{"student sp id ":004,"student name":"ijk","age":18},
+	5:{"student sp id ":005,"student name":"lmn","age":15}	
+};
+for each g in student_details
+{
+	var1=g.get("age");
+	var2=g.get("student name");
+	if(var1< 15)
+	{
+		info var2 +"   you can play 100m Running" + "and your age is " + var1;
+	}
+	else if ( var1 > 18 ) 
+    {
+		info var2 +  "   you can play kabbadi" + "and your age is " + var1;
+		
+    }
+	else 
+    {
+		info var2 +  "     you can play 400m Relay " +"and your age is "+ var1;
+    }
+}
+
+***************************************************************************************************************
+
+
+// 5. Write a script to check whether the given places are city,town, or rural based on the 
+// population given. 
+// Population={50000,4500,150000,80500,200000} 
+// Places={Maduranthagam,Karunkuzhi,Kancheepuram,Chengalpet,Tambaram} 
+// by using the Mapping concept.
+
+
+place_population = {
+	{"place": "Maduranthagam","population" :50000},
+	{"place": "Karunkuzhi","population" :4500},
+	{"place": "Kancheepuram","population" :150000},
+	{"place": "Chengalpet","population" :80500},
+	{"place": "Tambaram","population" :200000}
+};
+
+for each i in place_population
+{
+	var1=i.get("population");
+	var2=i.get("place");
+	if ( var1 > 0 && var1 <= 4500) 
+    {
+		info "you in rural & you village name  is :   " + 	else if ( var1 > 4500 && var1 <= 80500 ) var2 + "       your population =    " +var1;
+		info "*********************************************************************";
+		
+    }
+
+    {
+		info "you in town & you town name  is :   " + var2 + "        your population =    " +var1;
+		info "**********************************************************************";
+    }
+	else 
+    {
+		info "you in city & you city name  is :   " + var2 + "        your population =    " +var1;
+		info "************************************************************************";
+    }
+	
+}
+******************************************************************************************************
+
+// 6. Write a deluge script to convert days into years, months, weeks, and days 
+// Input: 373 - [Output will be : Year -1, Month - 0, Week - 1, Days - 1]
+
+input_days=373;
+days_in_year=365;
+no_of_month_in_year=12;
+no_of_weeks=7;
+
+var1=floor(input_days/days_in_year);
+var2=input_days%days_in_year;
+
+
+var3=floor (var2/no_of_month_in_year);
+var4=var2%no_of_month_in_year;
+
+
+var5= floor(var4/no_of_weeks);
+var6= var4% no_of_weeks;
+
+
+info "year  =  "+var1+", month  =  "+var3+", week  =  "+var5 +",days  =  "+var6;
+*****************************************************************************************************
+// 7. Sort the following as quantity sold in descending order. 
+//  unsorted_list=[{"Products":"Orange","Date_of_Sale":"2020-04-      
+// 18","Quantity_Sold":20},{"Products":"Apple","Date_of_Sale":"2020-02
+// 28","Quantity_Sold":15},{"Products":"Kiwi","Date_of_Sale":"2020-05
+// 15","Quantity_Sold":50},{"Products":"Peach","Date_of_Sale":"2020-11
+// 22","Quantity_Sold":35},{"Products":"Strawberry","Date_of_Sale":"2020-12
+// 24","Quantity_Sold":10},{"Products":"Watermelon","Date_of_Sale":"2021-01
+// 11","Quantity_Sold":25}];
+
+
+unsorted_list={{"Products":"Orange","Date_of_Sale":"2020-04-18","Quantity_Sold":20},{"Products":"Apple","Date_of_Sale":"2020-02-28" ,"Quantity_Sold":15},{"Products":"Kiwi","Date_of_Sale":"2020-05-15","Quantity_Sold":50},{"Products":"Peach","Date_of_Sale":"2020-11-22","Quantity_Sold":35},{"Products":"Strawberry","Date_of_Sale":"2020-12-24","Quantity_Sold":10},{"Products":"Watermelon","Date_of_Sale":"2021-01-11","Quantity_Sold":25}}; 
+et=map();
+ for each g in unsorted_list
+ {
+	 var=g.get("Quantity_Sold");
+	et.put(var, g);
+ }
+ info et.sortkey();
+
+***********************************************************************************************************************************
+// 8. Write a deluge script to print the most repeated number in a given list. 
+// numList = {2,3,4,2,5,3,6,2,7,9,2}; 
+
+input_list={2,3,4,2,5,3,6,2,7,9,2};
+et=map();
+
+for each g in input_list
+{
+	var=input_list.getOccurenceCount(g);
+	et.put(g,var);
+}
+max_num="";
+max_count=0;
+for each b in et.keys()
+{
+	if ( et.get(b)>max_count) 
+    {
+		max_count=et.get(b);
+		max_num=b;
+    }
+}
+
+info " repeated number  is   =  " +max_num;
+info "****************";
+info "no of times  repeated    =   " + max_count;
+************************************************************************************************************************
+// 9. Sum all values inside a nested list. (EX) n = {{1,2,3}, {4,5}, {6,7,8}}  
+// Output : 36 
+
+input_list={{1,2,3}, {4,5}, {6,7,8}};
+add_all=0;
+
+for each g in input_list
+{
+	for each i in g
+    {
+		add_all+=i;
+		
+    }
+}
+info add_all;
+***********************************************************************************************************************
+// 10. Flatten a nested list into a single list. (EX) n = {{1, 2, 3}, {4, 5}, {6, 7, 8}} 
+//  Output = {1, 2, 3, 4, 5, 6, 7, 8}.
+
+input_list={{1, 2, 3}, {4, 5}, {6, 7, 8}};
+new_list={};
+for each i in input_list
+{
+	for each g in i
+    {
+		new_list.add(g);
+    }
+}
+info new_list;
+***********************************************************************************************************************
+// 11. Find the max number from the nested list of numbers.  
+// (EX) n = {{1, 9, 3}, {4, 12}, {6, 7, 8}}  
+// Output = 12.  
+
+input_list={{1, 9, 3}, {4, 12}, {6, 7, 8}};
+new_list={};
+
+for each g in input_list
+{
+	for each i in g
+    {
+		new_list.add(i);
+		var=new_list.largest();
+    }
+}
+info var;
+******************************************************************************************************************
+// 12. Convert nested list to comma-separated string. (EX) n = {{1, 2, 3}, {4, 5}, {6, 7, 8}} 
+// Output = "1,2,3,4,5,6,7,8". 
+
+input_list={{1, 2, 3}, {4, 5}, {6, 7, 8}};
+new_list={};
+for each i in input_list
+{
+	for each g in i
+    {
+		
+		new_list.add(g);
+    }
+}
+info toString(new_list);
+
+*****************************************************************************************************************************

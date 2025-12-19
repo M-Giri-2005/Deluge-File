@@ -1,0 +1,246 @@
+// 1. Write a deluge script to calculate the age from given DOB and check whether they 
+// are eligible for voting. 
+
+dob=2003;
+new_year = zoho.currentdate.getyear();
+var=new_year-dob;
+if(var>=18)
+{
+	info "you are eligible for voting  " + "your age is  = " + var;
+}
+else 
+{
+	info "you are not eligible for voting = "+ "becouse you age is " + var;
+}
+
+*****************************************************************************************************************************************
+// // 2. Write a script to calculate the volume of a cylinder given its radius and height. 
+ra=40;
+r=ra*ra;
+h=55;
+volume = 3.141*r*h;
+info volume;
+********************************************************************************************************************************************
+
+// 3. Write a script to classify a person into age groups based on their age 
+// i. age less than 13 consider it as Child 
+// ii. Age Between 13 - 20 consider it as Teenager 
+// iii. Age Between 20 - 59 consider as Adult 
+// iv. above 59 consider as Senior citizen 
+age=60;
+
+if(age <= 13)
+{
+	info "you are a child "+"and you are age is " +age;
+}
+else if ( age > 12   &&   age<= 20) 
+{
+	info "you are a tenage "+"and you are age is " +age;
+}
+else if ( age > 20 &&  age <= 59 ) 
+{
+	info "you are a adult "+"and you are age is "+age;
+}
+else
+{
+	info "you are a senior citizen "+"and you are age is " + age;
+}
+
+****************************************************************************************************************************************
+
+// 4. Write a script to calculate the discount and final amount based on the total 
+// purchase amount. 
+// i.  Purchase amount less than 1000, no discount applied 
+// ii. Purchase amount greater than 1000, 10% discount applied 
+// iii. Purchase amount greater than 2000, 15% discount applied 
+
+purchase_amount=100000;
+
+if(purchase_amount < 1000)
+{
+	info "no discount for your purchaase becouse your = " +purchase_amount;
+}
+else if ( purchase_amount >=1000 && purchase_amount < 2000) 
+{
+	discount = purchase_amount/100*10;
+	var= purchase_amount-discount;
+	info "you have a 10% discount applide on your total bill & you blance pay amount is   " + var;
+}
+else 
+{
+	discount=purchase_amount/100*15;
+	var=purchase_amount-discount;
+	info "you have a 15% discount applide on your total bill & you blance pay amount is  " + var;
+}
+
+***********************************************************************************************************************************
+// 5. Write a script to determine loan eligibility based on income and credit score. 
+// i.Income is greater than 30000 and credit score above 500 is only eligible 
+// for loan. 
+
+your_income= 30001;
+credit_score = 501;
+if(your_income>= 3000 && credit_score > 500)
+{
+	info "you are eligible for loan ";
+}
+else 
+{
+	info "you are not eligible for loan";
+}
+****************************************************************************************************************************
+// 6. Write a script to suggest clothing based on the weather condition. 
+// i.Hot: Temperatures above 30°C 
+// ii.Warm: Temperatures between 15°C and 30°C 
+// iii.Cold: Temperatures below 15°C
+
+you_Temperatures=5;
+if(you_Temperatures > 30)
+{
+	info "you are a hot Temperatures so you can use the Lightweight Rayon Nap Dress & your Temperatures is =  " +you_Temperatures;
+}
+else if ( you_Temperatures >= 15 && you_Temperatures <= 30 ) 
+{
+	info "you are a warm Temperatures so you can use the linen Dress & your Temperatures is =  " +you_Temperatures;
+}
+else 
+{
+	info "you are a cold  Temperatures so you can use the insulted  Dress & your Temperatures is =  " +you_Temperatures;
+}
+***********************************************************************************************************************************
+// 7. Write a script to calculate BMI for the given height and weight and also 
+// categorise as Over Weight, Obesity,  Under Weight and Normal. 
+// Underweight: BMI less than 18.5
+//  Normal: BMI 18.5-24.9
+//  Overweight: BMI 25-29.9
+//  Obesity: BMI above 29.9 
+
+hight=170;
+weight=80;
+calculate_ibm = weight/hight*hight;
+round_value=calculate_ibm.round(1);
+if(round_value >= 18.5 && round_value <= 24.9)
+{
+	info "you are a normal weight ";
+}
+else if ( round_value >= 25 && round_value <= 29.9 ) 
+{
+	info "you are a over weight";
+}
+else 
+{
+	info "you are a obesity";
+}
+*************************************************************************************************************************************
+// // Type Here
+// 8. Write a script to calculate the mean and standard deviation of a list of numbers.
+//  Numbers ={10, 12, 23, 23, 16, 23, 21, 16}; 
+
+number_list={10, 12, 23, 23, 16, 23, 21, 16};
+new_number=number_list.size();
+count=0;
+v=0;
+for each num in number_list
+{
+	count+=num;
+			
+}
+mean=count/new_number;
+for each a in number_list
+{
+	sd=mean-a;
+ver=sd*sd;
+v+=ver;
+}
+ver2=v/(new_number-1);
+s=ver2.sqrt();
+info s;
+*****************************************************************************************************************************************************************************************
+
+// 9. Write a script to calculate the total cost of multiple items given their prices and 
+// quantities given in a separate list.
+//  product={"oil","Shamboo","Biscuit"};
+//  prices = {10,20,30}; // Prices of items
+//  quantities = {9, 1, 9}; // Quantities of items 
+
+product={"oil","Shamboo","Biscuit"};
+prices = {10,20,30};
+quantities = {9, 1, 9};
+q=0;
+count=0;
+for each a in product
+{
+	price_number=prices.get(count);
+	kar=quantities.get(q);
+	info a+ price_number*kar;
+	count+=1;
+	q+=1;
+}
+
+
+
+// another method of the sum 9. Write a script to calculate the total cost of multiple items given their prices and 
+// quantities given in a separate list.
+//  product={"oil","Shamboo","Biscuit"};
+//  prices = {10,20,30}; // Prices of items
+//  quantities = {9, 1, 9}; // Quantities of items 
+
+product={"oil","Shamboo","Biscuit"};
+prices = {10,20,30};
+quantities = {9, 1, 9};
+count=0;
+eymap=map();
+for each pr in prices
+{
+	eymap.put(product.get(count),pr*quantities.get(count));
+	count=count+1;
+	
+}
+info eymap;
+
+******************************************************************************************************************************************
+
+// 10.Write a script to calculate the total time spent on tasks given a list of time 
+// durations in hours and minutes.
+//  Sample Input: durations = {"01:30", "02:45", "01:45"};
+//  Sample Output: 6 hours and 0 Minutes
+input_time = {"01:30", "02:55", "01:45"};
+hours=0;
+min=0;
+for each inputs in input_time
+{
+	hours+=(inputs.getPrefix(":").tonumber());
+	min+= (inputs.getsuffix(":").tonumber());
+	
+}
+if(min%60== 0)
+{
+	info hours+min/60;
+}
+else 
+{
+	wh=min/60;
+	m=min%60;
+	info (hours+wh).floor()+" : " + m;
+}
+*************************************************************************************************************************************
+// 11. Generate a number list based on given input.
+//  Sample Input: 9
+//  Sample Output: {1,2,3,4,5,6,7,8,9}
+
+
+input1=9;
+count=0;
+list1={};
+ver="".leftPad(input1).toList("");
+for each a in ver
+{
+	count+=1;
+	list1.add(count);
+}
+info list1;
+
+****************************************************************************************************************************************
+
+
+

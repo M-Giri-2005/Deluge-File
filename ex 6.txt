@@ -1,0 +1,228 @@
+
+// 1. Find the largest number in the list - Input = {22,44,3,45,78,999,99}; 
+
+numbers_list= {22,44,3,45,78,999,99};
+var = numbers_list.get(0);
+for each a in numbers_list
+{
+	if (a>var)
+	{
+		var=a;
+		
+	}
+}
+info var;
+
+//another method by using function 1)  Find the largest number in the list - Input = {22,44,3,45,78,999,99}; 
+
+numbers_list= {22,44,3,45,78,999,99};
+b=numbers_list.largest();
+info b ;
+
+
+
+
+//another
+
+Inputvalue = {22,44,3,45,78,999,99,2500};
+arrangelist=list();
+
+for each k in Inputvalue
+{
+	var=Inputvalue.get(0);
+	for each i in Inputvalue
+	{
+		if ( var < i ) 
+        {
+			var=i;
+        }
+	}
+	arrangelist.add(var);
+	Inputvalue.removeElement(var);
+}
+info arrangelist;
+
+
+
+
+********************************************************************************************************************
+// 2. Second Largest number in the list - Input = {22,44,3,45,78,999,99} 
+
+var=number_list.nthlargest(2);
+info var;
+*****************************************************************************************************************************
+
+// // 3) Find duplicates in the list - Input = [1, 2, 3, 4, 5, 1, 2, 3]; 
+number_list={1, 2, 3, 4, 5, 1, 2, 3};
+number={};
+for each a in number_list
+{
+	if(number.notContains(a))
+	{
+		number.add(a);
+	}
+	else 
+    {
+		info a;
+    }
+}
+
+*************************************************************************************************************************
+
+//  4. Shuffel numbers in a given list - Input = [1, 2, 3, 4, 5, 6,7, 8]; 
+new_list={1, 2, 3, 4, 5, 6,7, 8};
+var=new_list.size();
+// new_list2={};
+for each a in new_list
+{
+	if (var > 0)
+	{
+	list_number=randomNumber(0,var);
+	new_list.add(new_list.get(list_number));
+	new_list.remove(list_number);
+	var-=1;
+	}
+}
+info new_list;
+*********************************************************************************************************************************
+
+// 5. TO REVERSE THE NUMBERS IN GIVEN LIST: - Input = {1, 2, 3, 4, 5};
+input_list = {1, 2, 3, 4, 5};
+var=reverse(input_list);
+info var;
+******************************************************************************************************************************************
+
+// 6. Print the output from the given string or text into a separate list 
+// character_list = {"fny46$@sdv","ib456&^dfg","6165dvd$%&%"}; 
+// Output : 
+// Alpha list : ["f","n","y","s","d","v"],["i","b","d","f","g"],["d","v","d"] 
+// Number list : ["4","6"],["4","5","6"],["6","1","6","5"] 
+// Character list : ["$","@"],["&","^"],["$","%","&","%"] 
+
+character_list = {"fny46$@sdv","ib456&^dfg","6165dvd$%&%"};
+alpha_list={};
+number_list={};
+spiceal_character={};
+for each a in character_list
+{
+	alpha_words=a.getAlpha();
+	var=alpha_words.toList("");
+	alpha_list.add(var);
+	
+	number_number=a.getAlphaNumeric();
+	c=number_number.removeAllAlpha();
+	d=c.toList("");
+	number_list.add(d);
+	
+	spiceal=a.removeAllAlphaNumeric();
+	e=spiceal.toList("");
+	spiceal_character.add(e);
+	
+	
+	}
+	info  alpha_list;
+	info number_list;
+	info spiceal_character;
+
+****************************************************************************************************************************************************************************************
+
+3
+// 7. Order Processing System: You are building an order processing system in Deluge, and 
+// you need to store customer information, including their name, email, and order details. 
+// Design a Map data structure to store this information, and write a Deluge script to add a 
+// new customer, update an existing customer's order, and retrieve a customer's order 
+// details. 
+customer_list= {
+	01:{"name": "karthi","email": "karthikishore111@gmail.com","order details": "fan"},
+	02:{"name": "magesh","email": "magesh001@gmail.com","order details": "light"},
+	03:{"name": "giri","email": "giri002@gmail.com","order details": "tubelight"}
+	
+};
+new_customer={04:{"name": "rk","email": "rk002@gmail.com","order details": "switch"}};
+customer_list.putAll(new_customer);
+for each customer in customer_list
+{
+	if(customer.get("order details")=="fan")
+	{
+		customer.update("order details","ac");
+		
+	}
+	info "order details for the list = " + customer.get("order details");
+	
+}
+********************************************************************************************************************************************************************************************
+
+// // Type Here
+// 8. Product Catalog: You are building a product catalog system in Deluge, and you need 
+// to store product information, including product ID, name, description, and price. Design 
+// a Map data structure to store this information, and write a Deluge script to add a new 
+// product, update an existing product's details, and retrieve a product's details by ID.
+
+
+customer_list= {
+	01:{"prodect id" :" 001" , "name": "karthi","order details": "fan","price" : 250},
+	02:{"prodect id" : "002" , "name": "magesh","order details": "light","price":100},
+	03:{"prodect id" : "003 ", "name": "giri","order details": "tester","price": 80}
+	
+};
+new_customer={
+	04:{"prodect id" : "004" , "name": "giri","order details": "switch","price" : 12}
+	};
+customer_list.putAll(new_customer);
+
+for each customer in customer_list
+{
+		
+	if(customer.get("order details")=="fan")
+	{
+		customer.update("order details","tap");
+		
+	}
+	info "prodect id = " +    customer.get("prodect id");
+	info "order details = " + customer.get("order details");
+	info "order price = " +customer.get("price") ;
+	info "****************************************************";
+}
+***********************************************************************************************************************************
+
+// // Type Here
+// 8. Product Catalog: You are building a product catalog system in Deluge, and you need 
+// to store product information, including product ID, name, description, and price. Design 
+// a Map data structure to store this information, and write a Deluge script to add a new 
+// product, update an existing product's details, and retrieve a product's details by ID.
+
+
+customer_list= {
+	01:{"prodect id" :" 001" , "name": "karthi","order details": "fan","price" : 250},
+	02:{"prodect id" : "002" , "name": "magesh","order details": "light","price":100},
+	03:{"prodect id" : "003 ", "name": "giri","order details": "tester","price": 80}
+	
+};
+
+new_customer={
+	04:{"prodect id" : "004" , "name": "giri","order details": "switch","price" : 12}
+	};
+customer_list.putAll(new_customer);
+sumall=0;
+
+for each customer in customer_list
+{
+	
+	if(customer.get("order details")=="fan")
+	{
+		customer.update("order details","tap");
+		
+	}
+	info "prodect id = " +    customer.get("prodect id");
+	info "order details = " + customer.get("order details");
+	info "order price = " +customer.get("price") ;
+	ver=customer.get("price");
+	sumall+=ver;
+
+	
+	info "****************************************************";
+}
+	info "total of all prodect amount = " + sumall;
+	info "-------------------------------------------------------";
+****************************************************************************************************************************************
+

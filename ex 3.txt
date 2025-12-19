@@ -1,0 +1,481 @@
+// 1. Write a Deluge Script to check whether a character is uppercase or lowercase alphabet.
+alphabet = "A";
+if(alphabet.matches("[A-Z]"))
+{
+	info "when the alphabet is uppercase";
+}
+if(alphabet.matches("[a-z]"))
+{
+	info "when the alphabet is lowercase";
+}
+******************************************************************************************************************************
+//2)  Write a script to input a month number and print the number of days in that month. 
+first_month = 8;
+if(2 == first_month)
+{
+	info " no of days is 28";
+}
+else if ( 7 || 8 == first_month ) 
+{
+	info "no of days is 31";
+}
+else if ( first_month % 2==0) 
+{
+	info "no of days is 30";
+}
+else 
+{
+	info "no of days is 31";
+}
+*************************************************************************************************************************************
+
+//3. Write a deluge script to count the total number of notes in given amount. #try using % operator to identify the notes and amount
+amount=1781;
+if(amount>=500)
+{
+	a= amount/500;
+info "no of notes is 500  x "+a.floor();
+amount2=500*a.floor();
+amount3 =amount - amount2;
+amount =amount3;
+}
+
+
+if(amount>=200)
+{
+	b= amount/200;
+info "no of notes is 200  x "+b.floor();
+amount4=200*b.floor();
+amount5 =amount - amount4;
+amount =amount5;
+}
+if(amount>=100)
+{
+	c= amount/100;
+info "no of notes is 100  x "+c.floor();
+amount6=100*c.floor();
+amount7 =amount - amount6;
+amount =amount7;
+}
+if(amount>=50)
+{
+	d= amount/50;
+info "no of notes is 50  x "+d.floor();
+amount8=50*d.floor();
+amount9 =amount - amount8;
+amount =amount9;
+}
+if(amount>=20)
+{
+	e= amount/20;
+info "no of notes is 20  x "+e.floor();
+amount10=20*e.floor();
+amount11 =amount - amount10;
+amount =amount11;
+}
+if(amount>=10)
+{
+	f= amount/10;
+info "no of notes is 10  x "+f.floor();
+amount12=10*f.floor();
+amount13 =amount - amount12;
+amount =amount13;
+}
+if(amount>=5)
+{
+	g= amount/5;
+info "no of coins is 5  x "+g.floor();
+amount14=5*g.floor();
+amount15 =amount - amount14;
+amount =amount15;
+}
+if(amount>=2)
+{
+	h= amount/2;
+info "no of coins is 2  x "+h.floor();
+amount16=2*h.floor();
+amount17 =amount - amount16;
+amount =amount17;
+}
+if(amount>=1)
+{
+	i= amount/1;
+info "no of coins is 1  x "+i.floor();
+amount18=1*i.floor();
+amount19 =amount - amount18;
+amount =amount19;
+}
+
+*************************************************************************************************************************************
+/* 4) Write a script to input marks of five subjects: Physics, Chemistry, Biology, 
+Mathematics, and Computer. Calculate percentage and grade according to the 
+following: 
+Percentage >= 90% : Grade A
+            Percentage >= 80% : Grade B 
+            Percentage >= 70% : Grade C
+            Percentage >= 60% : Grade D
+            Percentage >= 40% : Grade E
+ Percentage < 40% : Grade F*/
+// input
+
+phy=1;
+che=100;
+bio=100;
+math=100;
+com=100;
+total=phy+che+bio+math+com;
+ave=total/5;
+info = ave;
+if(phy<40 || che <40 ||bio<40 || math<40 || com<40 )
+{
+	info ("grade fail");
+}
+else if(ave >= 90)
+{
+	info "Grade A";
+}
+else if ( ave >= 80 ) 
+{
+	info"grade B";
+}
+else if ( ave >= 70 ) 
+{
+	info"grade C";
+}
+else if ( ave >= 60 ) 
+{
+	info"grade D";
+}
+else if ( ave >= 40 ) 
+{
+	info"grade E";
+}
+*************************************************************************************************************************************
+
+5)// //. Write a deluge script to input the basic salary of an employee and calculate its 
+// Gross salary according to the following: 
+//             Basic Salary <= 10000 : HRA = 20%, DA = 80% 
+//             Basic Salary <= 20000 : HRA = 25%, DA = 90% 
+//             Basic Salary > 20000 : HRA = 30%, DA = 95% 
+basic_salary = 200000;
+// info basic_salary;
+if(basic_salary <= 10000)
+{
+ hra=20/100;
+ da=80/100;
+ Gross_salary= basic_salary+hra+da;
+ info Gross_salary;
+}
+else if (basic_salary<= 20000 ) 
+{
+ h_r_a=25/100;
+ da=90/100;
+ Gross_salary= basic_salary+h_r_a+da;
+ info Gross_salary;
+}
+else if (basic_salary > 20000)
+{
+ hr_a=30/100;
+ da_=95/100;
+ Gross_salary=basic_salary+hr_a+da_;
+ info Gross_salary;	
+}
+
+*************************************************************************************************************************************
+
+/*6. Write a deluge script to input electricity unit charges and calculate the total 
+electricity bill according to the given condition:
+ For first 50 units Rs. 0.50/unit 
+            For next 100 units Rs. 0.75/unit
+            For next 100 units Rs.1.20/unit
+            For unit above 250 Rs.1.50/unit
+ An additional surcharge of 20% is added to the bill */
+
+unit=251;
+if(unit <= 50)
+{
+	a=unit*0.50 ;
+// 	info a;	
+}
+else if ( unit <=150 ) 
+{
+	a=(50*0.50)+(100*0.75);
+// 	info a;
+}
+else if (unit <= 250)
+{
+	a=(50*0.50)+(100*1.20);
+// 	info a;
+}
+else if ( unit > 250 )
+{
+bal=unit-50
+	a=(50*0.50)+(bal*1.50);
+// 	info a;
+}
+b= a*0.20;
+info b+a;
+*************************************************************************************************************************************
+//7) . Write a deluge script for a shopkeeper who buys a product for 15 rs and he sells 
+// the product for Rs.25 . Check whether the shopkeeper had profit or loss for these 
+// sales. 
+// Profit = Total Revenue - Total Expenses
+// Loss = Total Expenses - Total Revenue
+
+expenses = 15;
+revenue = 2;
+	profit= revenue-expenses;
+	loss = expenses - revenue;
+	if(profit>0)
+	{
+		info "total profit =  " + profit;
+	}
+	else if (profit < loss ) 
+    {
+		info "total loss = " + loss ;
+    }
+
+
+*************************************************************************************************************************************
+
+//8) Write a deluge script to input any string and check whether the string is 
+// Palindrome or Not. *
+name="mom";
+output=reverse(name);
+if(name == output)
+{
+	info "is a polindrome";
+}
+else 
+{
+	info "is not a polindrome";
+}
+
+*************************************************************************************************************************************
+
+//9)  Given two numbers, print "Equals" if the square root of the first number is equal to 
+// the square of the second number and vice versa.  
+first_number= 16;
+secound_number = 2;
+square_root= sqrt(first_number);
+square=secound_number*secound_number;
+
+if(square_root== square)
+{
+	info "is equals";
+}
+else
+{
+	info "is not equals";
+	}
+
+*************************************************************************************************************************************
+
+// 10) Print the difference between its flooring value and ceiling value for the given two 
+// numbers and print the absolute value for it. // Type Here*
+
+first_number = -25.3;
+a=first_number.floor();
+b=first_number.ceil();
+info "floor  = " + a;
+info "celling = " + b;
+*************************************************************************************************************************************
+
+// //11.Write a program to perform addition, subtraction, multiplication, and division of any two numbers using List.
+
+values=[15,25];
+a= values.get(0);
+b= values.get(1);
+addtion = a+b;
+sub = a-b;
+mul = a*b;
+div = a/b;
+info "add the two numbers " + addtion;
+info "sub the two numbers "+ sub;
+info"mul the two numbers "+  mul;
+info "div the two numbers " + div;
+
+// 12.If the given input is even, change it to the next odd number, and if it is odd, 
+// change it to the square of the number. Print the changed number in both the 
+// cases. 
+input = 5;
+if ( input % 2 == 0 ) 
+{
+	a=input+1;
+	info a;
+}
+else
+{
+	b= input*input;
+	info b;
+}
+
+// // 13.Print Simple Interest and Compound Interest after initializing all the necessary 
+// // inputs. 
+// SI = (P * R * T) / 100 
+// Where:
+// P = Principal amount 
+// R = Rate of interest per year (as a percentage) 
+// T = Time in years 
+// A = P (1 + R/100)^T 
+// Where:
+// P = Principal amount 
+// R = Rate of interest per year (as a percentage) 
+// T = Time in years 
+
+pri=25000;
+r=6/100;
+t=2;
+si= (pri*r*t)/100;
+info "simple intrest = "+si;
+a=(pri*(1+ r/100).power(t));
+ci=a-pri;
+info "compound intrst = " + a;
+
+
+*************************************************************************************************************************************
+// 14.Get the absolute value of a given input and print the power of 3 for the absolute 
+// value. 
+inpu_value = 3;
+b=abs(inpu_value);
+a=b*b*b;
+info a;
+*************************************************************************************************************************************
+// 15.For the given two numbers, print "Equals" if the ceiling for the first number is 
+// equal to the flooring for the second number and vice versa. 
+a=1.26;
+b=1.26;
+number=a.floor();
+number1=b.ceil();
+if(a == b || b == a)
+{
+	info "Equals";
+}
+else 
+{
+	info "not Equals";
+}
+*************************************************************************************************************************************
+// 16.Given a number, print "Perfect Square" if it is a perfect square
+//      Ex : 25 is a perfect square  & 27 is not a perfect square *
+input1=25;
+a=input1.sqrt();
+if(a == a.ceil())
+{
+	info "is a perefect square";
+}
+else 
+{
+	info "is not a perfect square";
+}
+
+// 17).Given two numbers,print the smallest among them. 
+first_number = 40;
+secound_number = 30;
+if (first_number >  secound_number)
+{
+	 info secound_number;
+}
+else 
+{
+	info first_number;
+}
+
+*************************************************************************************************************************************
+// 18.Find the maximum between two numbers by using an appropriate function.
+values = [1,2];
+max_value = values.largest();
+info max_value ;
+*************************************************************************************************************************************
+// 19.Find the minimum between two numbers by using an appropriate function.
+first_number=[25,50];
+var=first_number.smallest();
+info var;
+*************************************************************************************************************************************
+// 19.Find the minimum between two numbers by using an appropriate function.
+a=35;
+b=45;
+if(a>b)
+{
+	info b;
+}
+else 
+{
+	info a;
+}
+*************************************************************************************************************************************
+// 20 .Find the minimum between two numbers by using an appropriate function.
+a=35;
+b=45;
+if(a>b)
+{
+	info "is a max number"+a;
+info "mini number " +b;
+}
+else if ( b>a ) 
+{
+	info "max num "+b;
+	info "min num "+a;
+}
+*************************************************************************************************************************************
+// 21.Print the amount in words for the given input. 
+number_input = 25;
+words=number_input.toWords("en-gb");
+info words;
+
+*******************************************************************************************************************************************
+// 22.Write a program to find out the roots of Quadratic Equation ax2+bx+c=0;
+//  Ex: 2x2+4x+2=0; 
+a=2;
+b=4;
+c=2;
+d=(b*b)-(4*a*c);
+if(d>0)
+{
+	r1=((0-b)+d.sqrt())/(2*a);
+	r2=((0-b)-d.sqrt())/(2*a);
+	info "r1 value is = " + r1;
+	info "r2 value is = " +r2;
+}
+else 
+{
+	info "two roots are same ";
+	r=(0-b)/(2*a); 
+	info"root value = "+ r;
+}
+
+**********************************************************************************************************************************************************
+//23) Print the given text without space and Print the first letter of each word to 
+// uppercase.
+//  India is my Country
+input_name = "india is my country";
+var=input_name.proper();
+karthi=var.trim();
+info karthi;
+
+***************************************************************************************************************************************************************************
+
+// 24. Write a script to find the perimeter,diameter, and area of a circle. Print the round 
+// value of it
+// perimeter = 2*3.141*r
+// diameter = 2*r
+// area of the circule = 3.141*r*r;
+
+
+// input
+r=25;
+perimeter = 2*3.141*r;
+d=2*r;
+//code
+area= 3.141*r*r;
+var=perimeter+d+area;
+final_value=var.floor();
+info final_value;
+
+**********************************************************************************************************************************************************************************
+
+/// 25. Write a deluge script to count the Number 5 for the given input. Number=7658525*
+first_number = {"7658525"};
+var=first_number.getOccurenceCount("5");
+info "count of the dublicate number is = " + var;
+

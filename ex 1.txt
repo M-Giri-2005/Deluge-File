@@ -1,0 +1,161 @@
+// 1) Write a program to perform addition, subtraction, multiplication, and division of any two number0
+
+// add
+a=10;
+b=25;
+sum = a+b;
+info sum;
+
+//subtraction
+a=10;
+b=25;
+sub = a-b;
+info sub;
+
+//multiplication
+a=10;
+b=25;
+mul = a*b;
+info mul;
+
+//division
+a=10;
+b=25;
+div = a*b;
+info div;
+
+// 2)  Find the area and perimeter of a square 
+// formula
+// Perimeter (P) = 4 × side length (s)
+
+sl=5;
+permiter = 4*sl;
+info permiter;
+
+//3) Find the area and circumference of a circle
+//formula circumference
+
+radius= 27;
+circumference= 2*(3.141*27);
+info "circumference = " + circumference;
+// area formula area= w*h
+w=20;
+h=35;
+area=w*h;
+info "area = " + area;
+
+//// 4. Find the area and perimeter of a rectangle 
+// area formula area= w*h
+w=20;
+h=35;
+l=50;
+we= 35;
+area=w*h;
+perimeter= 2*(l+ we);
+info "area = " + area;
+info "perimeter of the rectangle = " + perimeter;
+
+//5. Find the remainder for the given problem  144÷7
+a=7;
+b=144;
+div= a%b;
+info div;
+
+
+//6) Find the quotient for the given problem  234÷6 
+a=6;
+b=234;
+div= a/b;
+info div;
+
+// 7)Find the square of any number
+
+a=25;
+square= 25*2;
+info square;
+
+
+// 8. Write a Deluge script to find the maximum between two numbers. 
+a=500;
+b=100;
+if(a>b)
+{
+	info a  + "  a is grater then b ";
+}
+else 
+{
+	info b  + "  b is grater then a ";
+}
+
+
+// 9. Write a Deluge Script to find the maximum between three numbers.
+a=1000;
+b=700;
+c=300;
+if(a>b &&  a>c)
+{
+	info ("a is grater");
+}
+else if ( b>a &&  b>c) 
+{
+	info ("b is grater ");
+}
+if(c>a && c>b)
+{
+	info("c is grater ");
+}
+
+// 10. write a deluge script to check whether the given input "Elephant" has a vowel or not
+name = "kng";
+name1=name.toLowerCase();
+if(name1.contains("a"))
+{
+	info ("true");
+}
+else if ( name1 .contains("e") ) 
+{
+	info ("true");
+}
+else if ( name1.contains("i")) 
+{
+	info("true");
+}
+else if ( name1.contains("o")) 
+{
+	info("true");
+}
+else if ( name1.contains("u")) 
+{
+	info("true");
+}
+else if( name1.contains("y")) 
+{
+	info("true");
+}
+else
+{
+	info("not a vowel latter");
+}
+
+//(another model programe) 10. write a deluge script to check whether the given input "Elephant" has a vowel or not
+name = "Elephant";
+name1=name.toLowerCase();
+if(name1.contains("a"))
+{
+	info ("a is a vowel ");
+	if(name1.contains("e")){
+		info("e is a vowel");
+		if(name1.contains("i")){
+			info("i is a vowel");
+			if(name1.contains("o")){
+				info("o is a vowel words");
+				if(name1.contains("u")){
+					info("u is a vowel words");
+				}
+			}
+		}
+	}
+}
+else{
+	info("not a vowel words");
+}

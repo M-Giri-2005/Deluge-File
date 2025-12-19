@@ -1,0 +1,156 @@
+
+// // 1) .Write a deluge script to create a new list, add some colors (string) and print out the 
+// // collection. 
+
+colour_list = {"red","blue","green","sky blue"};
+colour_list.add("yellow");
+info colour_list;
+
+// // 2. Write a deluge script to iterate through all elements in a list.
+firsts_name = {"karthi","kishore","diva","praveen","karthi"};
+for each first_name in firsts_name
+{
+info first_name;
+}
+********************************************************************************************************************
+
+// 3). Write a deluge script to search an element in a list
+
+firsts_list={"green","red","yellow","blue"};
+input= "red";
+if ( firsts_list.contains(input)==true) 
+{
+	info "element found = "+input;
+}
+else 
+{
+	info "element not found ";
+}
+
+****************************************************************************************************************************
+// 4. Write a deluge script to remove the third element from a list. 
+
+name_list={"red","blue","green","sky blue"};
+name_list.remove(3);
+info name_list;
+*****************************************************************************************************************************
+
+// 5.Write a deluge script to print all the elements of a List using the position of the 
+// elements. 
+names_list = {"red","blue","green","sky blue"};
+info names_list;
+if(names_list.get(00))
+{
+	info   "0 postion of the list"     +   names_list . get(00);
+}
+if(names_list.get(1))
+{
+	info   "1  postion of the list"     +   names_list.get(1);
+}
+if (names_list.get(2))
+{
+	info   "2 postion of the list"     +   names_list.get(2);
+}
+if ( names_list.get(3)) 
+{
+	info   "3 postion of the list"     +   names_list.get(3);
+}
+
+
+//anopther method  5.Write a deluge script to print all the elements of a List using the position of the 
+// elements. 
+names_list = {"red","blue","green","sky blue"};
+info names_list;
+for each index name  in names_list
+{
+	info names_list.get(name) ;
+}
+
+// 5 ) another method Write a deluge script to print all the elements of a List using the position of the 
+// elements. 
+names_list = {"red","blue","green","sky blue"};
+for each index name  in names_list
+{
+	info "names are = " +name;
+}
+**************************************************************************************************************************************
+
+// 6.Write a deluge script to find whether the number is divisible by 5 or not from the given 
+// list. Marks= {90,65,23,90,34} 
+first_mark={90,65,23,90,34};
+for each mark in first_mark
+{
+	if(mark%5==0)
+	{
+		info "is a divisible by five" + mark;
+	}
+	else 
+	{
+		info "is not divisible by five"+mark;
+		}
+}
+
+*********************************************************************************************************************************************************
+
+// 7.Write a deluge script to remove the duplicate value and print each element in 
+// lowercase from the given list. Flowers= {rose, lotus, lily, Jasmine, lily,sun flower} 
+flowers_name={"rose, lotus, lily, Jasmine, lily,sun flower"};
+for each name in flowers_name
+{
+	var=name.distinct();
+	a=var.toLowerCase();
+	info a;
+}
+********************************************************************************************************************************************************************
+
+// 8.Write a deluge script to find the absolute value for the given list.  
+// Numbers={123.5, 789.90, 876.65, 8976.76} 
+numbers_list={123.5, 789.90, 876.65, 8976.76};
+for each number in numbers_list
+{
+	a=number.round(0);
+	info a;
+}
+*********************************************************************************************************************************************************************
+
+// 9). write a deluge script to write the given number into Ascending order. 
+// Numbers_list= {87,90,67,23,56,90,65,90} 
+numbers_list= {87,90,67,23,56,90,65,90};
+info numbers_list.sort(true) ;
+
+
+*****************************************************************************************************************************************************************************
+
+// 10. write a deluge script to find the even and odd numbers from a list. 
+// List= {12,11,22,77,3433,90} 
+
+numbers_list={12,11,22,77,3433,90};
+for each number in numbers_list
+{
+	if(number.isEven())
+	{
+		info "even numbers  = "+number;
+	}
+	if(number.isOdd())
+	{
+		info "odd numbers =  " +number;
+	}
+}
+
+
+// another method 10) write a deluge script to find the even and odd numbers from a list. 
+// List= {12,11,22,77,3433,90} 
+
+numbers_list={12,11,22,77,3433,90};
+for each number in numbers_list
+{
+	if(number.isEven())
+	{
+		info "even numbers  = "+number;
+	}
+	else
+	{
+		info "odd numbers =  " +number;
+	}
+}
+*********************************************************************************************************************************************************************************
